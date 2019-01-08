@@ -1,5 +1,6 @@
-var path = require('path')
-var htmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const htmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
     entry: path.join(__dirname, './src/main.js'),
@@ -12,7 +13,8 @@ module.exports = {
             //指定模板页面
             template: path.join(__dirname, './src/index.html'),
             filename: 'index.html'
-        })
+        }),
+        new VueLoaderPlugin()
     ],
     module: {
         rules: [
@@ -25,7 +27,9 @@ module.exports = {
             //字体
             { test: /\.(eot|woff|woff2|svg|ttf)$/, use: ['url-loader'] },
             //js，excule排除
-            { test: /\.js$/, use: ['babel-loader'], exclude: /node_modules/ }
+            { test: /\.js$/, use: ['babel-loader'], exclude: /node_modules/ },
+            //vue组件
+            { test: /\.vue$/, use: ['vue-loader'] }
         ]
     }
 }
