@@ -1,8 +1,10 @@
 import VueRouter from 'vue-router'
 
-var router = new VueRouter({
-    router:[
+import home from './page/home.vue'
 
+var router = new VueRouter({
+    router: [
+        { path: '/home', component: home }
     ],
 })
 

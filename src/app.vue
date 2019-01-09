@@ -11,13 +11,13 @@
       </v-toolbar-items>
     </v-toolbar>
 
-
+    <router-view></router-view>
 
     <v-bottom-nav :active.sync="bottomNav" :value="true" absolute color="transparent">
-      <v-btn color="teal" flat value="recent">
-        <span>Recent</span>
-        <v-icon>history</v-icon>
-      </v-btn>
+      <router-link to='home' tag='v-btn' color="teal" flat value="home">
+        <span>主页</span>
+        <v-icon>home</v-icon>
+      </router-link>
       <v-btn color="teal" flat value="favorites">
         <span>Favorites</span>
         <v-icon>favorite</v-icon>
@@ -27,7 +27,6 @@
         <v-icon>place</v-icon>
       </v-btn>
     </v-bottom-nav>
-
   </v-app>
 </template>
 
@@ -35,7 +34,7 @@
 export default {
   data() {
     return {
-      bottomNav: "recent"
+      bottomNav: "home"
     };
   }
 };
