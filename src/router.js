@@ -1,5 +1,9 @@
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 
-// router = new Router()
+var router = new VueRouter({
+    router:[
 
-// export default router
+    ],
+})
+
+export default router
